@@ -12,8 +12,20 @@
     <link rel="shortcut icon" href="" />
 
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <script src="./src/app.js" defer></script>
   </head>
   <body>
-    Start project
+    <div class="container">
+      <div class="progress-container">
+        <div class="progress" id="progress"></div>
+        <div class="circle active">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+      </div>
+
+      <button class="btn" id="prev" disabled>Voltar</button>
+      <button class="btn" id="next">Avançar</button>
+    </div>
   </body>
 </html>

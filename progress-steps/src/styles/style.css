@@ -7,11 +7,105 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+:root {
+  --border-fill: #3498db;
+  --border-color: #e0e0e0;
+
+  --write: #fff;
+  --text: #999;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 350px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: var(--border-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -99;
+}
+
+.progress {
+  width: 0%;
+  margin: 0;
+  background-color: var(--border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  transition: 0.4s ease;
+  z-index: -99;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--write);
+  color: var(--text);
+  border-radius: 50%;
+  border: 3px solid var(--border-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--border-fill);
+}
+
+.btn {
+  margin: 5px;
+  padding: 8px 14px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background-color: var(--border-fill);
+  color: var(--write);
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
 }
