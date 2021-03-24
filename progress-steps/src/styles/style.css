@@ -30,7 +30,7 @@ body {
 .progress-container {
   display: flex;
   justify-content: space-between;
-  max-width: 100%;
+  max-width: 99%;
   width: 350px;
   margin-bottom: 30px;
   position: relative;
