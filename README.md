@@ -24,18 +24,10 @@ Pokedex:
 
 ### Projetos criados
 
-<<<<<<< HEAD
-# | Projeto   | Deployed |
-- | --------- | --------- |
-1 | Expanding cards | [Deployed](https://exapanding-cards-mmdev.netlify.app)
-2 | Progress steps  | [Deployed](https://progress-steps-mmdev.netlify.app)
-
-=======
 | #  | Projeto | Deployed |
 |--- | --------- | --------- |
 | 1  | Expanding cards | [Deployed](https://exapanding-cards-mmdev.netlify.app) |
 | 2  | Progress steps | [Deployed](https://progress-steps-mmdev.netlify.app) |
->>>>>>> 03638b2dd1a2d1b16dbd2158f87a900fa6aeb84a
 
 <br/>
 Entre outros.
