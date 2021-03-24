@@ -22,6 +22,15 @@ Buscador de filmes:
 Pokedex:
 <img alt="Landing page" title="#langind page" src="./images/pokedex.png" />
 
+### Projetos criados
+
+# | Projeto | Deployed |
+
+- | --------- | --------- |
+  1 | Expanding cards | [Deployed](https://exapanding-cards-mmdev.netlify.app)
+  2 | Progress steps | [Deployed](https://progress-steps-mmdev.netlify.app)
+
+<br/>
 Entre outros.
 
 > Disclaimer: Projeto inspirado no curso: [50 Projects in 50 days](https://www.udemy.com/course/50-projects-50-days/) by [Florin Pop](https://www.florin-pop.com)
