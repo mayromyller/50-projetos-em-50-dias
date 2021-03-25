@@ -11,9 +11,66 @@
     <link rel="icon" type="image/png" href="" />
     <link rel="shortcut icon" href="" />
 
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./src/styles/style.css" />
+
+    <script src="./src/app.js" defer></script>
   </head>
   <body>
-    Start project
+    <div class="container">
+        <div class="circle-container">
+          <div class="circle">
+            <button id="close">
+              <i class="fas fa-times"></i>
+            </button>
+            <button id="open">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="content">
+          <h1 class="title">Beagle ou bigou &#40;como se fala&#41;</h1>
+          <small class="author">mmdev</small>
+          <p class="description">
+            A história completa do beagle é confusa, pois há pouca documentação
+            confiável de sua origem. Acredita-se que eram cães de caça, que se
+            destacavam por sua rapidez e energia. Seu tamanho pequeno e bom faro
+            reforçam a tese de serem criados como caçadores de sucesso, além de
+            serem desbravadores. Foi desenvolvido nos anos 1800, gerado a partir
+            das raças talbot hound, o north country beagle e o southern hound,
+            na Inglaterra. Na década de 1860, tornaram-se “beagles americanos”:
+            uma linhagem importada e “aperfeiçoada” nos EUA, com a finalidade de
+            criar padrões de beleza. Em 1885, o American Kennel Clube reconheceu
+            a raça oficialmente.
+          </p>
+          <h3>Meu cachorro</h3>
+          <img
+            class="photo-post"
+            src="./src/assets/dog.jpg"
+            alt="Um cahorro com pouca idade, com tons de amarelo e marrom nos pelos usando uma coleira vermelha"
+          />
+          <p class="description">
+            A alegria do beagle, vai contagiar e divertir diariamente toda a
+            família! Companheiros e aventureiros, adoram descobrir o mundo o
+            tempo todo através do seu faro. Nenhum odor passa batido por esses
+            cachorros, especialmente comida. O beagle encontra facilmente
+            alimentos e adora comer. Mas, é preciso estar atento, pois ele tem
+            tendência à obesidade. Portanto, leve seu beagle para passear
+            regularmente e permita que ele gaste toda a sua inesgotável energia.
+          </p>
+        </div>      
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li class="navigation-item"><i class="font-icon fas fa-home"></i>Inicio</li>
+        <li class="navigation-item"><i class="font-icon fas fa-bone"></i></i>Sobre</li>
+        <li class="navigation-item"><i class="font-icon fas fa-dog"></i>Ver outros</li>
+      </ul>
+    </nav>
   </body>
 </html>
