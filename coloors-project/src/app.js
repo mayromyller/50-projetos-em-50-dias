@@ -1,4 +1,5 @@
 const colorDivs = document.querySelectorAll(".color");
+const titleHex = document.querySelectorAll(".title");
 
 function generateHex() {
   const hexColor = chroma.random();
@@ -13,7 +14,19 @@ function randomColors() {
 
     div.style.backgroundColor = randomColor;
     hexText.innerHTML = randomColor;
+
+    checkTextContrast(randomColor, hexText);
   });
+}
+
+function checkTextContrast(color, text) {
+  const luminance = chroma(color).luminance();
+
+  if (luminance > 0.5) text.style.color = "#333";
+  else {
+    text.style.color = "white";
+    text.style.filter = "drop-shadow(0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4))";
+  }
 }
 
 randomColors();
