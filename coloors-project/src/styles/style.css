@@ -58,10 +58,10 @@ svg {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 
-  pointer-events: none;
-  opacity: 0;
+  /* pointer-events: none; */
+  /* opacity: 0; */
 
-  transform: translateY(100px);
+  /* transform: translateY(100px); */
   transition: all 0.5s ease-in-out;
 }
 
@@ -136,4 +136,19 @@ svg {
   background: none;
   cursor: pointer;
   margin: 2rem 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
+  border-color: white;
 }
