@@ -1,4 +1,7 @@
 const colorDivs = document.querySelectorAll(".color");
+const sliders = document.querySelectorAll('input[type="range"]');
+
+sliders.forEach((slider) => slider.addEventListener("input", hslControls));
 
 function generateHex() {
   const hexColor = chroma.random();
@@ -83,6 +86,30 @@ function boxshadowOnFocus(item, color) {
     "focusout",
     (element) => (element.target.style.boxShadow = "none")
   );
+}
+
+function hslControls(element) {
+  const index =
+    element.target.getAttribute("data-brigh") ||
+    element.target.getAttribute("data-sat") ||
+    element.target.getAttribute("data-hue");
+
+  let sliders = element.target.parentElement.querySelectorAll(
+    'input[type="range"]'
+  );
+
+  const hue = sliders[0];
+  const brightness = sliders[1];
+  const saturation = sliders[2];
+
+  const backgroundColor = colorDivs[index].querySelector("h2").innerText;
+
+  let color = chroma(backgroundColor)
+    .set("hsl.s", saturation.value)
+    .set("hsl.l", brightness.value)
+    .set("hsl.h", hue.value);
+
+  colorDivs[index].style.backgroundColor = color;
 }
 
 randomColors();
