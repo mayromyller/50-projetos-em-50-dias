@@ -1,6 +1,8 @@
 const colorDivs = document.querySelectorAll(".color");
 const sliders = document.querySelectorAll('input[type="range"]');
 
+let initialColors;
+
 sliders.forEach((slider) => slider.addEventListener("input", hslControls));
 
 colorDivs.forEach((div, index) =>
@@ -16,9 +18,13 @@ function generateHex() {
 }
 
 function randomColors() {
+  initialColors = [];
+
   colorDivs.forEach((div, index) => {
     const hexText = div.children[0];
     const randomColor = generateHex();
+
+    initialColors.push(chroma(randomColor).hex());
 
     div.style.backgroundColor = randomColor;
     hexText.innerHTML = randomColor;
@@ -108,7 +114,7 @@ function hslControls(element) {
   const brightness = sliders[1];
   const saturation = sliders[2];
 
-  const backgroundColor = colorDivs[index].querySelector("h2").innerText;
+  const backgroundColor = initialColors[index];
 
   let color = chroma(backgroundColor)
     .set("hsl.s", saturation.value)
