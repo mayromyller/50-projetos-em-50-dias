@@ -15,12 +15,15 @@ const generateButton = document.querySelector(".generate");
 const saveButton = document.querySelector(".save");
 const saveContainer = document.querySelector(".save-container");
 const closeSave = document.querySelector(".close-save");
+const saveName = document.querySelector(".save-name");
+const saveColorsPallete = document.querySelector(".submit-save");
 
 const libraryContainer = document.querySelector(".library-container");
 const libraryButton = document.querySelector(".library");
 const closeLibrary = document.querySelector(".close-library");
 
 let initialColors;
+let savedPalletes = [];
 
 sliders.forEach((slider) => slider.addEventListener("input", hslControls));
 
@@ -254,5 +257,69 @@ saveButton.addEventListener("click", () =>
 libraryButton.addEventListener("click", () =>
   openCloseButton(libraryContainer, closeLibrary)
 );
+
+function savePallete() {
+  saveContainer.classList.remove("active");
+
+  const name = saveName.value;
+  const colors = [];
+  initialTitleHex.forEach((title) => colors.push(title.innerText));
+
+  let palleteNumber = savedPalletes.length;
+  const palleteObject = {
+    name,
+    colors,
+    number: palleteNumber,
+  };
+  savedPalletes.push(palleteObject);
+
+  saveToLocal(palleteObject);
+  saveName.value = "";
+
+  renderPreviewPallete(palleteObject);
+}
+
+function renderPreviewPallete({ name, colors }) {
+  const colorsPallete = document.createElement("div");
+  colorsPallete.classList.add("custom-pallete");
+
+  const title = document.createElement("h4");
+  title.innerText = name;
+
+  const preview = document.createElement("div");
+  preview.classList.add("small-preview");
+
+  colors.forEach((color) => {
+    const div = document.createElement("div");
+    div.style.backgroundColor = color;
+
+    preview.appendChild(div);
+  });
+
+  const palleteButton = document.createElement("button");
+  palleteButton.classList.add("pick-pallete");
+
+  palleteButton.innerText = "Selecionar";
+
+  colorsPallete.appendChild(title);
+  colorsPallete.appendChild(preview);
+  colorsPallete.appendChild(palleteButton);
+
+  libraryContainer.children[0].appendChild(colorsPallete);
+}
+
+function saveToLocal(pallete) {
+  let localPalletes;
+  if (localStorage.getItem("palletes") === null) {
+    localPalletes = [];
+  } else {
+    localPalletes = JSON.parse(localStorage.getItem("palletes"));
+  }
+
+  localPalletes.push(pallete);
+  localStorage.setItem("pallete", JSON.stringify(localPalletes));
+}
+
+saveColorsPallete.addEventListener("click", savePallete);
 
 randomColors();
