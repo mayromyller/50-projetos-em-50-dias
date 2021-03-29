@@ -229,7 +229,6 @@ function copyToClipBoard(titleHex) {
   document.body.removeChild(element);
 
   const popupBox = copyPopup.children[0];
-  console.log(popupBox);
 
   copyPopup.classList.add("active");
   popupBox.classList.add("active");
@@ -248,6 +247,12 @@ function openCloseButton(container, button) {
   popup.classList.add("active");
 
   button.addEventListener("click", () => container.classList.remove("active"));
+}
+
+function closeLibraryFn() {
+  const popup = libraryContainer.children[0];
+  libraryContainer.classList.remove("active");
+  popup.classList.remove("active");
 }
 
 saveButton.addEventListener("click", () =>
@@ -279,7 +284,7 @@ function savePallete() {
   renderPreviewPallete(palleteObject);
 }
 
-function renderPreviewPallete({ name, colors }) {
+function renderPreviewPallete({ name, colors, number }) {
   const colorsPallete = document.createElement("div");
   colorsPallete.classList.add("custom-pallete");
 
@@ -298,8 +303,26 @@ function renderPreviewPallete({ name, colors }) {
 
   const palleteButton = document.createElement("button");
   palleteButton.classList.add("pick-pallete");
+  palleteButton.classList.add(number);
 
   palleteButton.innerText = "Selecionar";
+
+  palleteButton.addEventListener("click", (event) => {
+    const palleteIndex = event.target.classList[1];
+
+    initialColors = [];
+    savedPalletes[palleteIndex].colors.forEach((color, index) => {
+      closeLibraryFn();
+      initialColors.push(color);
+      colorDivs[index].style.backgroundColor = color;
+
+      const text = colorDivs[index].children[0];
+
+      checkTextContrast(color, text);
+      updateTextUI(index);
+    });
+    resetInputs();
+  });
 
   colorsPallete.appendChild(title);
   colorsPallete.appendChild(preview);
@@ -309,17 +332,29 @@ function renderPreviewPallete({ name, colors }) {
 }
 
 function saveToLocal(pallete) {
-  let localPalletes;
   if (localStorage.getItem("palletes") === null) {
-    localPalletes = [];
+    savedPalletes = [];
   } else {
-    localPalletes = JSON.parse(localStorage.getItem("palletes"));
+    savedPalletes = JSON.parse(localStorage.getItem("palletes"));
   }
 
-  localPalletes.push(pallete);
-  localStorage.setItem("pallete", JSON.stringify(localPalletes));
+  savedPalletes.push(pallete);
+  localStorage.setItem("palletes", JSON.stringify(savedPalletes));
+}
+
+function getLocal() {
+  if (localStorage.getItem("palletes") === null) {
+    savedPalletes = [];
+  } else {
+    const palleteObjects = JSON.parse(localStorage.getItem("palletes"));
+    savedPalletes = [...palleteObjects];
+    palleteObjects.forEach((palleteObject) => {
+      renderPreviewPallete(palleteObject);
+    });
+  }
 }
 
 saveColorsPallete.addEventListener("click", savePallete);
 
+getLocal();
 randomColors();
