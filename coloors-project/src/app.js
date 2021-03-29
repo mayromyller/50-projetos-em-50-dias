@@ -124,6 +124,7 @@ function hslControls(element) {
     .set("hsl.h", hue.value);
 
   colorDivs[index].style.backgroundColor = color;
+  colorize(color, hue, brightness, saturation);
 }
 
 function updateTextUI(index) {
