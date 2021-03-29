@@ -7,6 +7,8 @@ const sliderPanel = document.querySelectorAll(".sliders");
 const adjustButton = document.querySelectorAll(".adjust");
 const closeAdjustButton = document.querySelectorAll(".close-adjustment");
 
+const generateButton = document.querySelector(".generate");
+
 let initialColors;
 
 sliders.forEach((slider) => slider.addEventListener("input", hslControls));
@@ -35,6 +37,8 @@ adjustButton.forEach((button, index) =>
 closeAdjustButton.forEach((button, index) =>
   button.addEventListener("click", () => closeAdjustmentPanel(index))
 );
+
+generateButton.addEventListener("click", randomColors);
 
 function generateHex() {
   const hexColor = chroma.random();
