@@ -7,6 +7,9 @@ const sliderPanel = document.querySelectorAll(".sliders");
 const adjustButton = document.querySelectorAll(".adjust");
 const closeAdjustButton = document.querySelectorAll(".close-adjustment");
 
+const lockIcons = document.querySelectorAll(".fa-lock-open");
+const lockButton = document.querySelectorAll(".lock");
+
 const generateButton = document.querySelector(".generate");
 
 let initialColors;
@@ -40,6 +43,15 @@ closeAdjustButton.forEach((button, index) =>
 
 generateButton.addEventListener("click", randomColors);
 
+lockButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.children[0].classList.toggle("fa-lock-open");
+    button.children[0].classList.toggle("fa-lock");
+
+    button.parentElement.parentElement.classList.toggle("locked");
+  });
+});
+
 function generateHex() {
   const hexColor = chroma.random();
 
@@ -53,7 +65,11 @@ function randomColors() {
     const hexText = div.children[0];
     const randomColor = generateHex();
 
-    initialColors.push(chroma(randomColor).hex());
+    if (div.classList.contains("locked")) {
+      initialColors.push(hexText.innerText);
+
+      return;
+    } else initialColors.push(chroma(randomColor).hex());
 
     div.style.backgroundColor = randomColor;
     hexText.innerHTML = randomColor;
