@@ -152,3 +152,50 @@ input[type="range"]:focus {
   outline: none;
   border-color: white;
 }
+
+.copy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.copy-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.copy-popup {
+  min-width: 30%;
+  height: 30vh;
+  background: white;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  transition: transform 0.6s ease;
+  transform: translateY(-2rem);
+}
+
+.copy-popup.active {
+  transform: translateY(0);
+}
+
+.like,
+.copied {
+  font-size: 1.25rem;
+  padding: 2rem;
+}
