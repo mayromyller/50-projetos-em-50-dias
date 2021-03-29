@@ -12,6 +12,14 @@ const lockButton = document.querySelectorAll(".lock");
 
 const generateButton = document.querySelector(".generate");
 
+const saveButton = document.querySelector(".save");
+const saveContainer = document.querySelector(".save-container");
+const closeSave = document.querySelector(".close-save");
+
+const libraryContainer = document.querySelector(".library-container");
+const libraryButton = document.querySelector(".library");
+const closeLibrary = document.querySelector(".close-library");
+
 let initialColors;
 
 sliders.forEach((slider) => slider.addEventListener("input", hslControls));
@@ -230,5 +238,21 @@ function openAdjustmentPanel(index) {
 function closeAdjustmentPanel(index) {
   sliderPanel[index].classList.remove("active");
 }
+
+function openCloseButton(container, button) {
+  const popup = container.children[0];
+  container.classList.add("active");
+  popup.classList.add("active");
+
+  button.addEventListener("click", () => container.classList.remove("active"));
+}
+
+saveButton.addEventListener("click", () =>
+  openCloseButton(saveContainer, closeSave)
+);
+
+libraryButton.addEventListener("click", () =>
+  openCloseButton(libraryContainer, closeLibrary)
+);
 
 randomColors();
