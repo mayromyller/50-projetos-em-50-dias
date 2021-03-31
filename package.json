@@ -3,6 +3,7 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
   "devDependencies": {
+    "git-conventional-commits": "^1.0.7",
     "plop": "^2.7.4"
   }
 }
