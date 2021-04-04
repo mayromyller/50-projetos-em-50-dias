@@ -30,6 +30,8 @@ Pokedex:
 | 2   | Progress steps      | [Deployed](https://progress-steps-mmdev.netlify.app)      |
 | 3   | Rotation Navigation | [Deployed](https://rotation-navigation-mmdev.netlify.app) |
 | 4   | Color Palette       | [Deployed](https://coloors-project-mmdev.netlify.app)     |
+| 5   | Hiden search        | [Sem Deploy]()                                            |
+| 6   | Blurry loading      | [Sem Deploy]()                                            |
 
 <br/>
 Entre outros.
