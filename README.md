@@ -26,12 +26,14 @@ Pokedex:
 
 | #   | Projeto             | Deployed                                                  |
 | --- | ------------------- | --------------------------------------------------------- |
-| 1   | Expanding cards     | [Deployed](https://exapanding-cards-mmdev.netlify.app)    |
-| 2   | Progress steps      | [Deployed](https://progress-steps-mmdev.netlify.app)      |
-| 3   | Rotation Navigation | [Deployed](https://rotation-navigation-mmdev.netlify.app) |
-| 4   | Color Palette       | [Deployed](https://coloors-project-mmdev.netlify.app)     |
-| 5   | Hiden search        | [Sem Deploy]()                                            |
-| 6   | Blurry loading      | [Sem Deploy]()                                            |
+| 01  | Expanding cards     | [Deployed](https://exapanding-cards-mmdev.netlify.app)    |
+| 02  | Progress steps      | [Deployed](https://progress-steps-mmdev.netlify.app)      |
+| 03  | Rotation Navigation | [Deployed](https://rotation-navigation-mmdev.netlify.app) |
+| 04  | Color Palette       | [Deployed](https://coloors-project-mmdev.netlify.app)     |
+| 05  | Hiden search        | [Sem Deploy]()                                            |
+| 06  | Blurry loading      | [Sem Deploy]()                                            |
+| 07  | Slide Stories       | [Deployed](https://slide-stories-mmdev.netlify.app)       |
+| 08  | Langind Page        | [Deployed](https://landing-page-mmdev.netlify.app)        |
 
 <br/>
 Entre outros.
