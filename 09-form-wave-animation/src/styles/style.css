@@ -14,4 +14,90 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+
+  background: #333;
+  color: white;
+}
+
+.container {
+  padding: 20px 40px;
+  background: #222;
+  border-radius: 6px;
+}
+
+.input-control {
+  display: block;
+
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  width: 100%;
+  padding: 10px 0px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  transition: 0.1s;
+  color: white;
+  font-size: 16px;
+}
+
+.input-control:focus {
+  outline: none;
+  border-bottom-color: #fb1;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container + .input-container {
+  margin-top: 30px;
+}
+
+.login-action {
+  background: white;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #333;
+  text-align: center;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.label-form {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.input-container label span {
+  display: inline-block;
+  font-size: 18px;
+  transition: 0.3s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+}
+
+.input-container .input-control:focus + .label-form span,
+.input-container .input-control:valid + .label-form span {
+  color: #fb1;
+  transform: translateY(-30px);
+}
+
+.login-action:active {
+  transform: scale(0.98);
+}
+
+.text {
+  text-align: center;
+}
+
+.text > a {
+  color: #fb1;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }

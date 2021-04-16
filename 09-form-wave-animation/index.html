@@ -12,8 +12,31 @@
     <link rel="shortcut icon" href="" />
 
     <link rel="stylesheet" href="./src/styles/style.css" />
+    
+    <script src="./src/app.js" defer></script>
   </head>
   <body>
-    Start project
+    <div class="container">
+      <h1>Acessar a Dashboard</h1>
+      <form class="form-control">
+        <div class="input-container">
+          <input type="text" id="email" class="input-control" required>
+          <label class="label-form" for="email">Email</label>
+        </div>
+        <div class="input-container">
+          <input type="text" id="password" class="input-control" required>
+          <label class="label-form" for="password">Senha</label>
+        </div>
+
+        <button class="login-action">Entrar</button>
+
+        <div class="help-form">
+          <p class="text">Ainda não tem conta? 
+            <a href="#">Criar conta</a>
+          </p>
+        </div>
+
+      </form>
+    </div>
   </body>
 </html>
