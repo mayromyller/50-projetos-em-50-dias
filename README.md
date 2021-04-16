@@ -34,6 +34,7 @@ Pokedex:
 | 06  | Blurry loading      | [Sem Deploy]()                                            |
 | 07  | Slide Stories       | [Deployed](https://slide-stories-mmdev.netlify.app)       |
 | 08  | Langind Page        | [Deployed](https://landing-page-mmdev.netlify.app)        |
+| 09  | Form Wave Animation | [Sem Deploy]()                                            |
 
 <br/>
 Entre outros.
