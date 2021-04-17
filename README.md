@@ -36,6 +36,7 @@ Pokedex:
 | 08  | Langind Page        | [Deployed](https://landing-page-mmdev.netlify.app)        |
 | 09  | Form Wave Animation | [Sem Deploy]()                                            |
 | 10  | Dad Joke            | [Sem Deploy]()                                            |
+| 11  | Key prees           | [Sem Deploy]()                                            |
 
 <br/>
 Entre outros.
