@@ -35,6 +35,7 @@ Pokedex:
 | 07  | Slide Stories       | [Deployed](https://slide-stories-mmdev.netlify.app)       |
 | 08  | Langind Page        | [Deployed](https://landing-page-mmdev.netlify.app)        |
 | 09  | Form Wave Animation | [Sem Deploy]()                                            |
+| 10  | Dad Joke            | [Sem Deploy]()                                            |
 
 <br/>
 Entre outros.
